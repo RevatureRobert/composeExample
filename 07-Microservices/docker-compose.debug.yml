@@ -1,0 +1,20 @@
+version: '2.1'
+
+services:
+  07-microservices:
+    image: 07-microservices
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      JAVA_OPTS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005,quiet=y
+    ports:
+      - 9000:9000
+      - 9001:9001
+      - 9002:9002
+      - 9090:9090
+      - 9091:9091
+      - 9061:9061
+      - 8765:8765
+      - 8761:8761
+      - 5005:5005
